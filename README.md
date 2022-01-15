@@ -1,5 +1,5 @@
 ## OOP-22-1
-Welcome to group 1 lap of the OOP course at ELTE, here you will find all the laps updated week by week and you will find some extra useful informations!
+Welcome to group 1 lab of the OOP course at ELTE, here you will find all the laps updated week by week and you will find some extra useful informations!
 
 * **How to get started with C++:**
   1. You will need to install the compiler, installing the compiler is not hard, all you need is to follow the instructions in https://www.mingw-w64.org/downloads/
