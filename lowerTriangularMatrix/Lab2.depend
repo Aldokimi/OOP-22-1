@@ -1,0 +1,14 @@
+# depslib dependency file v1.0
+1644927679 source:c:\users\aldokimi\desktop\school\oop\labs\lab2\main.cpp
+	<iostream>
+	"LTMatrix.h"
+
+1644934334 c:\users\aldokimi\desktop\school\oop\labs\lab2\include\ltmatrix.h
+	<vector>
+	<string>
+	<fstream>
+	<math.h>
+
+1644933083 source:c:\users\aldokimi\desktop\school\oop\labs\lab2\src\ltmatrix.cpp
+	"LTMatrix.h"
+
