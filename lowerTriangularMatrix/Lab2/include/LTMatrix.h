@@ -17,6 +17,8 @@ class LTMatrix
 {
     public:
 
+        /// those exceptions are only to handle errors!
+
         class InvalidIndexException : public std::exception{};
         class OutOfTriangleException : public std::exception{};
         class DimensionMismatchException : public std::exception{};

@@ -1,4 +1,14 @@
+/// you always need to include the header file!
 #include "LTMatrix.h"
+
+
+/**you always need to add the class name followed by :: to indicate that this constructor or this function
+ * is related to this specific class
+ **/
+
+
+ /// you can use this way to initialize the local variables or you can use the following method!
+ // LTMatrix::LTMatrix() : m_size(3), m_vec({1,2,3,4,5,6}) {}
 
 LTMatrix::LTMatrix()
 {
@@ -46,12 +56,12 @@ LTMatrix::LTMatrix(const std::string& filename){
 }
 
 int LTMatrix::ind(int i, int j) const{
-    return j + i *(i-1)/2 - 1;
+    return j + i *(i-1)/2 - 1; /// here we are getting the the index (we gonna use this index in the vector to find the elemnt)
+                              ///  of the element at the ith column and the jth row
 }
 
 double LTMatrix::calcSizeFromLength(unsigned int lenght){
-    return (-1+sqrt(1+8 * lenght)) / 2;
-    // -1 + sqrt(1 + 8 * 7) / 2
+    return (-1+sqrt(1+8 * lenght)) / 2; // finding the size of the matrix from the vector length
 }
 
 bool LTMatrix::inLowerTran(int i, int j) const{
@@ -63,7 +73,7 @@ int LTMatrix::getElement(int i, int j) const{
     {
         return m_vec[ind(i,j)];
     }
-    else if (1<=j && j<=m_size && 1<=i && i<=m_size)
+    else if (1<=j && j<=m_size && 1<=i && i<=m_size) // if it is on the upper side of the matrix where there are only 0s
     {
         return 0;
     }
@@ -94,10 +104,10 @@ void LTMatrix::setElement(int i, int j, int e){
 LTMatrix LTMatrix::add(const LTMatrix& a, const LTMatrix& b){
     if (a.getSize() == b.getSize())
     {
-        LTMatrix sum(a);
+        LTMatrix sum(a); // meaning that we are creating a copy of the matrix a (copying matrix a to matrix sum)
         for (int i=0;i<a.m_vec.size();i++)
         {
-            sum.m_vec[i] += b.m_vec[i];
+            sum.m_vec[i] += b.m_vec[i]; // normal matrices addition
         }
         return sum;
     }
@@ -110,7 +120,7 @@ LTMatrix LTMatrix::add(const LTMatrix& a, const LTMatrix& b){
 LTMatrix LTMatrix::multiply(const LTMatrix& a, const LTMatrix& b){
     if (a.getSize() == b.getSize())
     {
-        LTMatrix mul(a.getSize());
+        LTMatrix mul(a.getSize()); /// creating a matrix filled with 0 of the same size like a
         for (int i=1;i<=a.m_size;i++)
         {
             for (int j=1;j<=a.m_size;j++)
@@ -133,7 +143,7 @@ LTMatrix LTMatrix::multiply(const LTMatrix& a, const LTMatrix& b){
 }
 
 
-std::ostream &operator<<(std::ostream &os,const LTMatrix& m)
+std::ostream &operator<<(std::ostream &os,const LTMatrix& m) ///overriding the << operator to be able to output a matrix!
 {
     os << m.m_size <<"x"<<m.m_size<<std::endl;
     for (int i=1;i<=m.m_size;i++)
@@ -146,10 +156,6 @@ std::ostream &operator<<(std::ostream &os,const LTMatrix& m)
     }
     return os;
 }
-
-
-
-//LTMatrix::LTMatrix() : m_size(3), m_vec({1,2,3,4,5,6}){}
 
 //LTMatrix::~LTMatrix()
 //{
