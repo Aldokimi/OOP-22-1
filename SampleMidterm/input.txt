@@ -1,0 +1,6 @@
+HackMac  Jack 50 60 85 
+SimiHack Jack 45 
+HackMac  Zidan 100 100 100 90
+HackMac  Lili 65 90 85 90
+SimiHack Lili 100 100 100 90
+HackMac  Sara 16 28 15 33 
