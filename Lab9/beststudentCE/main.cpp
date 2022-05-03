@@ -71,7 +71,7 @@ int main()
     try
     {
         BestStudent pr;
-        SeqInFileEnumerator<Student> myenor("empty.txt");
+        SeqInFileEnumerator<Student> myenor("input.txt");
         pr.addEnumerator(&myenor);
 
         pr.run();
